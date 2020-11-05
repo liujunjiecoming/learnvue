@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <h2>当前计数: {{counter}}</h2>
+  <!--    <button v-on:click="counter++">+</button>-->
+  <!--    <button v-on:click="counter&#45;&#45;">-</button>-->
+  <button v-on:click="add">-</button>
+  <button v-on:click="sub">-</button>
+</div>
+
+<script src="../js/vue.js"></script>
+
+<script>
+  obj = {
+    counter: 0
+  };
+
+  const app = new Vue({
+    el: '#app',
+    data: obj,
+    methods: {
+      add: function () {
+        console.log('add被执行');
+        this.counter++
+      },
+      sub: function () {
+        console.log('sub被执行');
+        this.counter--
+      }
+    },
+    //生命周期是函数（其他的options可以是函数或者对象(上面的data, methods)）
+    beforeCreate: function () {
+      console.log("beforeCreate")
+    },
+    create: function () {
+      console.log("create");
+    },
+    mounted: function () {
+      console.log("mounted 111")
+    }
+  })
+
+  console.log(app);
+</script>
+
+
+</body>
+</html>
