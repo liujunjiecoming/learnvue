@@ -8,6 +8,8 @@
 
 <div id="app">
   {{message}}
+  <h2>{{url}}</h2>
+  <h2 v-html="url"></h2>
 </div>
 
 <script src="../js/vue.js"></script>
@@ -15,7 +17,8 @@
   const app = new Vue({
     el: '#app',
     data: {
-      message: 'Hello Vue'
+      message: 'Hello Vue',
+      url: '<a href="http://www.baidu.com">百度一下</a>'
     }
   })
 </script>
