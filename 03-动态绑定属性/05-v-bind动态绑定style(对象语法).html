@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+
+<div id="app">
+  <h2 :style="{fontSize: finalSize1, backgroundColor: backgroundColor}">{{message}}</h2>
+  <h2 :style="{fontSize: finalSize2 + 'px', color: finalColor}">{{message}}</h2>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello Vue',
+      finalSize1: '100px',
+      finalSize2: 100,
+      finalColor: 'red',
+      backgroundColor: 'yellow'
+    }
+  })
+</script>
+
+
+</body>
+</html>

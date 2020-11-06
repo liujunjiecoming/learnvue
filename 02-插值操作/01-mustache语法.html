@@ -8,6 +8,10 @@
 
 <div id="app">
   {{message}}
+  <h2>{{firstName + lastName}}</h2>
+  <h2>{{firstName + ' ' + lastName}}</h2>
+  <h2>{{firstName}} {{lastName}}</h2>
+  <h2>{{counter * 2}}</h2>
 </div>
 
 <script src="../js/vue.js"></script>
@@ -15,7 +19,10 @@
   const app = new Vue({
     el: '#app',
     data: {
-      message: 'Hello Vue'
+      message: 'Hello Vue',
+      firstName: '卢本伟',
+      lastName: 'white',
+      counter: 100
     }
   })
 </script>
