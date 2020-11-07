@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<style>
+
+  .active {
+    color: red;
+  }
+</style>
+<body>
+
+<div id="app">
+  <ul>
+    <li v-for="(item, index) in entity"
+        :class="{active: currentIndex == index}"
+        @click="btnClick(index)">
+      {{index}}-{{item}}
+    </li>
+  </ul>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello Vue',
+      entity: ['Java', 'Python', 'Php', 'Vue'],
+      currentIndex: 0
+    },
+    methods: {
+      btnClick(index) {
+        this.currentIndex = index;
+      }
+    }
+  })
+</script>
+
+
+</body>
+</html>

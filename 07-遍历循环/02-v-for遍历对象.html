@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <!--1 遍历对象时只有一个参数，这个参数对应的是Value值-->
+  <h2 v-for="item in info">{{item}}</h2>
+
+  <!--2 遍历对象: 获取key和value的格式 (value, key)-->
+  <h2 v-for="(value, key) in info">{{value}}-{{key}}</h2>
+
+  <!--3 遍历对象: 获取key和value和index格式(value, key, index)-->
+  <h2 v-for="(value, key, index) in info">{{value}}-{{key}}-{{index}}</h2>
+
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello Vue',
+      info: {
+        name: 'LuBenWei',
+        age: 27,
+        height: 1.87
+      }
+    }
+  })
+</script>
+
+</body>
+</html>
