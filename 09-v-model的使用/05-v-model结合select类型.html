@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+
+<div id="app">
+  <!--1 绑定一个-->
+  <!--  <select name="fruit"  v-model="fruit">-->
+  <!--    <option value="苹果">苹果</option>-->
+  <!--    <option value="香蕉">香蕉</option>-->
+  <!--    <option value="葡萄">葡萄</option>-->
+  <!--    <option value="雪梨">雪梨</option>-->
+  <!--  </select>-->
+  <!--  <h2>你选择的水果是：{{fruit}}</h2>-->
+
+  <!--2 绑定多个-->
+  <!--  <select name="fruits" v-model="fruits" multiple>-->
+  <!--    <option value="苹果">苹果</option>-->
+  <!--    <option value="香蕉">香蕉</option>-->
+  <!--    <option value="葡萄">葡萄</option>-->
+  <!--    <option value="雪梨">雪梨</option>-->
+  <!--  </select>-->
+  <!--  <h2>你选择的水果是：{{fruits}}</h2>-->
+
+
+
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello Vue',
+      fruit: '葡萄',
+      fruits: []
+    }
+  })
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<script>
+  /**
+   * filter  函数的使用
+   * filter  中的回调函数必须返回一个boolean值
+   * true：  当返回true时，函数内部会自动将这次回调的n加入到新的数组中
+   * false： 当返回false时，函数内部会过滤掉这次的n
+   * @type {number[]}
+   */
+
+  const nums = [20, 30, 111, 222, 555, 69, 90]
+
+  //箭头函数
+  let total = nums.filter(n => n < 100).map(n => n * 2).reduce((pre, n) => pre + n);
+  console.log(total)
+
+  //函数式编程
+  // let total = nums.filter(function (n) {
+  //   return n < 100
+  // }).map(function (n) {
+  //   return n * 2
+  // }).reduce(function (preValue, n) {
+  //   return preValue + n
+  // }, 0);
+  // console.log(total);
+
+
+  // let newNums = nums.filter(function (n) {
+  //   return n < 100
+  // });
+  // console.log(newNums); //[20, 30, 69, 90]
+  //
+  // //map函数 全部元素都做同样的动作
+  // let new2Nums = newNums.map(function (n) {
+  //   return n * 2
+  // });
+  // console.log(new2Nums);
+  //
+  // //reduce函数 汇总所有元素
+  // let total = new2Nums.reduce(function (preV, n) {
+  //   return preV + n
+  // }, 0)
+  // console.log(total);
+</script>
+
+
+</body>
+</html>

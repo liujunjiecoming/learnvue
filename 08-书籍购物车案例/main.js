@@ -48,11 +48,32 @@ const app = new Vue({
   },
   computed: {
     totalPrice() {
-      let totalPrice = 0;
-      for (let i = 0; i < this.books.length; i++) {
-        totalPrice += this.books[i].price * this.books[i].count
-      }
-      return totalPrice;
+      //1，原生for循环（只能获取到索引值）
+      // let totalPrice = 0;
+      // for (let i = 0; i < this.books.length; i++) {
+      //   totalPrice += this.books[i].price * this.books[i].count
+      // }
+      // return totalPrice;
+
+      //2，for in（只能获取到索引值）
+      // let totalPrice = 0;
+      // for (let i in this.books) {
+      //   totalPrice += this.books[i].price * this.books[i].count
+      // }
+      // return totalPrice;
+
+      //3，for of（可以直接获取到对象）
+      // let totalPrice = 0;
+      // for (let item of this.books) {
+      //   totalPrice += item.price * item.count
+      // }
+      // return totalPrice;
+
+      //4，通过高阶函数处理
+      return this.books.reduce(function (preValue, book) {
+        return preValue + book.price * book.count
+      }, 0)
+
     }
   },
   //过滤器的使用

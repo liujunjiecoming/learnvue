@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <cpn></cpn>
+</div>
+
+<!--1 第一种方法 type必须是text/x-template，否则会报错-->
+<!--<script type="text/x-template" id="cpn">-->
+<!--  <div>-->
+<!--    <h2>伞兵一号卢本伟</h2>-->
+<!--    <p>准备就绪，哈哈哈哈哈哈</p>-->
+<!--  </div>-->
+<!--</script>-->
+
+<!--2 第二种方法 template标签-->
+<template id="cpn">
+  <div>
+    <h2>伞兵一号卢本伟</h2>
+    <p>准备就绪，嘻嘻嘻嘻嘻嘻</p>
+  </div>
+</template>
+
+<script src="../js/vue.js"></script>
+<script>
+
+  //注册一个组件
+  Vue.component('cpn', {
+    template: '#cpn'
+  });
+
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello Vue'
+    }
+  })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <!--cpn中的驼峰
+      cInfo需改成c-info
+      childMyMessage改成child-my-message
+  -->
+  <cpn :c-info="info" :child-my-message="message"></cpn>
+</div>
+
+<template id="cpn">
+  <!--多个元素需要有root节点-->
+  <div>
+    <h2>{{cInfo}}</h2>
+    <h2>{{childMyMessage}}</h2>
+  </div>
+</template>
+
+<script src="../js/vue.js"></script>
+<script>
+
+  const cpn = {
+    template: '#cpn',
+    props: {
+      cInfo: {
+        type: Object,
+        default() {
+          return {};
+        }
+      },
+      childMyMessage: {
+        type: String,
+        default: ''
+      }
+    }
+  };
+
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello Vue',
+      info: {
+        name: '卢本伟',
+        age: 27,
+        height: 1.73
+      }
+    },
+    components: {
+      cpn
+    }
+  })
+</script>
+
+
+</body>
+</html>
